@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EThrift_Web.Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>A-Thrifters Clothing Store</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        
+        <div id="preloader">
+            <div class="jumper">
+                <div></div><div></div><div></div>
+            </div>
+        </div>
+
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.aspx"><h2>A<em>Thrifters</em></h2></a>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="index.aspx">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.aspx">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.aspx">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
+
+        <asp:PlaceHolder ID="navGuest" runat="server">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="guestDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> Guest
+                </a>
+                <div class="dropdown-menu" aria-labelledby="guestDropdown">
+                    <a class="dropdown-item" href="login.aspx">Login</a>
+                    <a class="dropdown-item" href="register.aspx">Register</a>
+                </div>
+            </li>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder ID="navCustomer" runat="server" Visible="false">
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-shopping-cart"></i> Shop
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cartDropdown">
+                    <a class="dropdown-item" href="cart.aspx">My Cart</a>
+                    <a class="dropdown-item" href="wishlist.aspx">My Wishlist</a>
+                    <a class="dropdown-item" href="invoices.aspx">My History</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="custUserDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> <asp:Label ID="lblCustEmail" runat="server"></asp:Label>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="custUserDropdown">
+                    <asp:LinkButton ID="btnLogoutCust" runat="server" CssClass="dropdown-item" OnClick="btnLogout_Click">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </asp:LinkButton>
+                </div>
+            </li>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder ID="navManager" runat="server" Visible="false">
+
+            <li class="nav-item">
+                <a class="nav-link" href="manage.aspx">
+                    <i class="fa fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="manUserDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-shield"></i> <asp:Label ID="lblManEmail" runat="server"></asp:Label>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="manUserDropdown">
+                    <h6 class="dropdown-header">Management</h6>
+                    
+                    <a class="dropdown-item" href="manageProducts.aspx">Manage Products</a>
+                    <a class="dropdown-item" href="allOrders.aspx">View Customer Orders</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="addManager.aspx">Add New Manager</a>
+                    <div class="dropdown-divider"></div>
+                    
+                    <asp:LinkButton ID="btnLogoutMan" runat="server" CssClass="dropdown-item text-danger" OnClick="btnLogout_Click">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </asp:LinkButton>
+                </div>
+            </li>
+        </asp:PlaceHolder>
+
+    </ul>
+</div>
+                    </div>
+            </nav>
+        </header>
+
+       <div >
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="inner-content">
+                            <p>Copyright &copy; 2026 A-thrifters Clothing Co., Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+</body>
+</html>

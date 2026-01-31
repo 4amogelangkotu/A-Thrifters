@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EThrift_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EThrift_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carts" nillable="true" type="tns:ArrayOfCart" />
+      <xs:element minOccurs="0" name="Invoices" nillable="true" type="tns:ArrayOfInvoice" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReview" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserTable" nillable="true" type="tns:UserTable" />
+  <xs:complexType name="ArrayOfCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cart" nillable="true" type="tns:Cart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCart" nillable="true" type="tns:ArrayOfCart" />
+  <xs:complexType name="Cart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CartId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTable" nillable="true" type="tns:UserTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cart" nillable="true" type="tns:Cart" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carts" nillable="true" type="tns:ArrayOfCart" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItem" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReview" />
+      <xs:element minOccurs="0" name="Stock" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfInvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceItem" nillable="true" type="tns:ArrayOfInvoiceItem" />
+  <xs:complexType name="InvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:Invoice" />
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatePlaced" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItem" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTable" nillable="true" type="tns:UserTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="ArrayOfReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Review" nillable="true" type="tns:Review" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReview" nillable="true" type="tns:ArrayOfReview" />
+  <xs:complexType name="Review">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReviewId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTable" nillable="true" type="tns:UserTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Review" nillable="true" type="tns:Review" />
+  <xs:complexType name="ArrayOfWishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wishlist" nillable="true" type="tns:Wishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWishlist" nillable="true" type="tns:ArrayOfWishlist" />
+  <xs:complexType name="Wishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserTable" nillable="true" type="tns:UserTable" />
+      <xs:element minOccurs="0" name="WishlistId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wishlist" nillable="true" type="tns:Wishlist" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="ArrayOfCartDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartDisplay" nillable="true" type="tns:CartDisplay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartDisplay" nillable="true" type="tns:ArrayOfCartDisplay" />
+  <xs:complexType name="CartDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CartId" type="xs:int" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CartDisplay" nillable="true" type="tns:CartDisplay" />
+  <xs:complexType name="ArrayOfInvoiceDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceDisplay" nillable="true" type="tns:InvoiceDisplay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceDisplay" nillable="true" type="tns:ArrayOfInvoiceDisplay" />
+  <xs:complexType name="InvoiceDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatePlaced" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceDisplay" nillable="true" type="tns:InvoiceDisplay" />
+  <xs:complexType name="ArrayOfReviewDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReviewDisplay" nillable="true" type="tns:ReviewDisplay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReviewDisplay" nillable="true" type="tns:ArrayOfReviewDisplay" />
+  <xs:complexType name="ReviewDisplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReviewDisplay" nillable="true" type="tns:ReviewDisplay" />
+  <xs:complexType name="DashboardStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRevenue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalUsers" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DashboardStats" nillable="true" type="tns:DashboardStats" />
+</xs:schema>

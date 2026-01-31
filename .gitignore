@@ -1,0 +1,25 @@
+# --- Visual Studio & .NET Ignored Files ---
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# --- Build Results ---
+[Bb]in/
+[Oo]bj/
+
+# --- NuGet Packages ---
+packages/
+!packages/repositories.config
+
+# --- Web specific ---
+*.log
+App_Data/
+# Keep App_Data folder but ignore content (remove the * below if you want to upload the DB file)
+App_Data/*
+!App_Data/.gitkeep
+
+# --- OS Generated ---
+Thumbs.db
+.DS_Store

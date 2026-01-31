@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.36631.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EThrift_Service", "EThrift_Service\EThrift_Service.csproj", "{D23675D8-9359-444D-859D-F9D25204B0DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D23675D8-9359-444D-859D-F9D25204B0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23675D8-9359-444D-859D-F9D25204B0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23675D8-9359-444D-859D-F9D25204B0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23675D8-9359-444D-859D-F9D25204B0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB91E743-E323-422F-B5A0-BE838C95218F}
+	EndGlobalSection
+EndGlobal
